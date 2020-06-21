@@ -436,4 +436,5 @@ img {
   border: 0.06rem solid #cd972b;
   padding: 1rem 0.3rem;
   font-size: 0.34rem;
+  white-space: pre-line;
 }
