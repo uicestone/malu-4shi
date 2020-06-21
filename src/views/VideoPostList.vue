@@ -14,7 +14,7 @@
           ><span class="fr bold">{{ video.title }}</span>
         </div>
         <div class="t2 clearfix">
-          <div class="img fl"><img :src="video.poster" /></div>
+          <div class="img fl"><img :src="video.posterUrl" /></div>
           <a :href="video.link" target="_blank" class="fr"
             ><em>前往学习 >></em></a
           >
