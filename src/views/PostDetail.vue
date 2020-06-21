@@ -39,5 +39,12 @@ header {
     background: #c69842;
     padding: 5px 20px;
   }
+  .content {
+    /deep/ img {
+      width: 100%;
+      height: auto;
+      margin: 10px auto;
+    }
+  }
 }
 </style>
