@@ -248,7 +248,7 @@ img {
   width: 100%;
 }
 .ssPart2 .bg {
-  height: 100vh;
+  min-height: 680px;
 }
 .ssPart2 .bg img {
   position: absolute;
