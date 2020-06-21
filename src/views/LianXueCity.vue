@@ -5,7 +5,7 @@
         <span class="bold">{{ city }}</span>
       </div>
       <div class="ssList bold clearfix">
-        <a href="#" v-for="post in posts" :key="post.id"
+        <a @click="goDetail(post)" v-for="post in posts" :key="post.id"
           ><i></i><em class="ovh">{{ post.title }}</em></a
         >
       </div>
@@ -19,6 +19,11 @@ import { getPosts } from "@/helpers/resource";
 export default {
   data() {
     return { city: null, posts: [] };
+  },
+  methods: {
+    goDetail(post) {
+      this.$router.push("/post/" + post.id);
+    },
   },
   async mounted() {
     this.city = this.$route.params.city;

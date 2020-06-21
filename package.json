@@ -1,6 +1,6 @@
 {
   "name": "malu-4shi",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,6 +10,10 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "node-sass": "^4.14.1",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },

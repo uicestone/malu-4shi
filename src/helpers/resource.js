@@ -8,3 +8,8 @@ export async function getPosts(params) {
   const res = await http.get("posts", { params });
   return res.data;
 }
+
+export async function getPostDetail(id) {
+  const res = await http.get("posts/" + id);
+  return res.data;
+}

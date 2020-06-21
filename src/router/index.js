@@ -20,16 +20,6 @@ const routes = [
     component: () => import("../views/SiShiList.vue"),
   },
   {
-    path: "/video-album-list",
-    name: "课件列表-专辑",
-    component: () => import("../views/VideoAlbumList.vue"),
-  },
-  {
-    path: "/video-post-list",
-    name: "课件列表-图文",
-    component: () => import("../views/VideoPostList.vue"),
-  },
-  {
     path: "/xuexiditu",
     name: "学习地图",
     component: () => import("../views/XueXiDiTu.vue"),
@@ -38,6 +28,21 @@ const routes = [
     path: "/xuexiditu/:name",
     name: "学习列表",
     component: () => import("../views/XueXiList.vue"),
+  },
+  {
+    path: "/post/:id",
+    name: "文章详情",
+    component: () => import("../views/PostDetail.vue"),
+  },
+  {
+    path: "/video-album-list",
+    name: "课件列表-专辑",
+    component: () => import("../views/VideoAlbumList.vue"),
+  },
+  {
+    path: "/video-post-list",
+    name: "课件列表-图文",
+    component: () => import("../views/VideoPostList.vue"),
   },
 ];
 
