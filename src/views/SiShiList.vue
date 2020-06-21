@@ -26,7 +26,13 @@ export default {
   },
   methods: {
     goDetail(post) {
-      this.$router.push("/post/" + post.id);
+      if (post.videoListLayout === "album_items") {
+        this.$router.push("/video-album/" + post.id);
+      } else if (post.videoListLayout === "post_items") {
+        this.$router.push("/video-post/" + post.id);
+      } else {
+        this.$router.push("/post/" + post.id);
+      }
     },
   },
   async mounted() {

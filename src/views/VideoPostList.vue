@@ -2,23 +2,43 @@
   <section class="wrap ovh">
     <section class="ssPart5 clearfix">
       <div class="tit clearfix">
-        <p>浦东新区“四史”学习教育学习课件清单</p>
+        <p>{{ post.title }}</p>
       </div>
-      <div class="part2 clearfix">
+      <div
+        class="part2 clearfix"
+        v-for="(video, index) in post.videos"
+        :key="video.id"
+      >
         <div class="t1 clearfix">
-          <em class="fl">01</em
-          ><span class="fr bold">浦东新区“四史”学习教育学习课件清单</span>
+          <em class="fl">{{ (index + 1).toString().padStart(2, "0") }}</em
+          ><span class="fr bold">{{ video.title }}</span>
         </div>
         <div class="t2 clearfix">
-          <div class="img fl"><img src="images/img.jpg" /></div>
-          <a href="#" class="fr"><em>前往学习 >></em></a>
+          <div class="img fl"><img :src="video.poster" /></div>
+          <a :href="video.link" target="_blank" class="fr"
+            ><em>前往学习 >></em></a
+          >
         </div>
         <div class="t3 clearfix">
           <div class="txt bold">
-            是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯
+            {{ video.excerpt }}
           </div>
         </div>
       </div>
     </section>
   </section>
 </template>
+
+<script>
+import { getPostDetail } from "@/helpers/resource";
+
+export default {
+  data() {
+    return { id: null, post: {} };
+  },
+  async mounted() {
+    this.id = this.$route.params.id;
+    this.post = await getPostDetail(this.id);
+  },
+};
+</script>

@@ -339,7 +339,7 @@ img {
 }
 
 .ssPart5 .tit {
-  height: 1.4rem;
+  min-height: 1.4rem;
   display: flex;
   align-items: center;
   font-size: 0.34rem;
@@ -365,7 +365,7 @@ img {
   color: #6f5d51;
   margin: 0.2rem;
 }
-.ssPart5 .part1 a:nth-child(even) {
+.ssPart5 .part1 ul li:nth-child(even) a {
   color: #c60026;
 }
 .ssPart5 .part2 {

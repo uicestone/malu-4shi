@@ -2,28 +2,33 @@
   <section class="wrap ovh">
     <section class="ssPart5 clearfix">
       <div class="tit clearfix">
-        <p>浦东新区“四史”学习教育学习课件清单</p>
+        <p>{{ post.title }}</p>
       </div>
-      <div class="part1 textC bold clearfix">
+      <div
+        class="part1 textC bold clearfix"
+        v-for="album in albums"
+        :key="album.id"
+      >
         <div class="bd">
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
-          <a href="page6.html" class="textH">《解码中国之治》第一课</a>
+          <h3>{{ album.title }}</h3>
+          <div v-html="album.content"></div>
         </div>
       </div>
     </section>
   </section>
 </template>
+
+<script>
+import { getPostDetail } from "@/helpers/resource";
+
+export default {
+  data() {
+    return { id: null, post: {}, albums: [] };
+  },
+  async mounted() {
+    this.id = this.$route.params.id;
+    this.post = await getPostDetail(this.id);
+    this.albums = this.post.videos;
+  },
+};
+</script>

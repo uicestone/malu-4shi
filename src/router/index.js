@@ -35,12 +35,12 @@ const routes = [
     component: () => import("../views/PostDetail.vue"),
   },
   {
-    path: "/video-album-list",
+    path: "/video-album/:id",
     name: "课件列表-专辑",
     component: () => import("../views/VideoAlbumList.vue"),
   },
   {
-    path: "/video-post-list",
+    path: "/video-post/:id",
     name: "课件列表-图文",
     component: () => import("../views/VideoPostList.vue"),
   },
