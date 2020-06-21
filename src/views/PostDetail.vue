@@ -28,7 +28,7 @@ header {
   padding: 10px;
   text-align: center;
   color: white;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: bold;
   border-bottom: solid 8px #5d4d41;
 }
