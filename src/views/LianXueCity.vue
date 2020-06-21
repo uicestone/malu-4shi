@@ -1,39 +1,28 @@
 <template>
   <section class="wrap ovh">
     <section class="ssPart3 clearfix">
-      <div class="tit"><span class="bold">江苏昆山</span></div>
+      <div class="tit">
+        <span class="bold">{{ city }}</span>
+      </div>
       <div class="ssList bold clearfix">
-        <a href="#"
-          ><i></i
-          ><em class="ovh"
-            >大科学之“光”照亮科创（人才）专委会的共赢之路大科学之“光”照亮科创（人才）专委会的共赢之路</em
-          ></a
-        >
-        <a href="#"
-          ><i></i
-          ><em class="ovh">大科学之“光”照亮科创（人才）专委会的共赢之路</em></a
-        >
-        <a href="#"
-          ><i></i
-          ><em class="ovh">大科学之“光”照亮科创（人才）专委会的共赢之路</em></a
-        >
-        <a href="#"
-          ><i></i
-          ><em class="ovh">大科学之“光”照亮科创（人才）专委会的共赢之路</em></a
-        >
-        <a href="#"
-          ><i></i
-          ><em class="ovh">大科学之“光”照亮科创（人才）专委会的共赢之路</em></a
-        >
-        <a href="#"
-          ><i></i
-          ><em class="ovh">大科学之“光”照亮科创（人才）专委会的共赢之路</em></a
-        >
-        <a href="#"
-          ><i></i
-          ><em class="ovh">大科学之“光”照亮科创（人才）专委会的共赢之路</em></a
+        <a href="#" v-for="post in posts" :key="post.id"
+          ><i></i><em class="ovh">{{ post.title }}</em></a
         >
       </div>
     </section>
   </section>
 </template>
+
+<script>
+import { getPosts } from "@/helpers/resource";
+
+export default {
+  data() {
+    return { city: null, posts: [] };
+  },
+  async mounted() {
+    this.city = this.$route.params.city;
+    this.posts = await getPosts({ category: this.city });
+  },
+};
+</script>

@@ -15,7 +15,7 @@ const routes = [
     component: () => import("../views/LianXueCity.vue"),
   },
   {
-    path: "/sishi",
+    path: "/sishi/:category",
     name: "四史",
     component: () => import("../views/SiShiList.vue"),
   },
