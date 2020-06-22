@@ -18,7 +18,7 @@ export default {
   async mounted() {
     this.id = this.$route.params.id;
     this.post = await getPostDetail(this.id);
-  }
+  },
 };
 </script>
 
@@ -45,6 +45,9 @@ header {
       width: 100%;
       height: auto;
       margin: 10px auto;
+    }
+    /deep/ p {
+      text-align: justify !important;
     }
   }
 }
