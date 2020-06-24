@@ -13,7 +13,7 @@ import { getPostDetail } from "@/helpers/resource";
 
 export default {
   data() {
-    return { id: null, post: {} };
+    return { id: null, post: { categories: [{}] } };
   },
   async mounted() {
     this.id = this.$route.params.id;
@@ -46,8 +46,12 @@ header {
       height: auto;
       margin: 10px auto;
     }
-    /deep/ p {
+    /deep/ p,
+    /deep/ li {
       text-align: justify !important;
+    }
+    /deep/ p {
+      margin-bottom: 0.5em;
     }
   }
 }
