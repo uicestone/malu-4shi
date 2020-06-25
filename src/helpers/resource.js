@@ -13,3 +13,8 @@ export async function getPostDetail(id) {
   const res = await http.get("posts/" + id);
   return res.data;
 }
+
+export async function getTerm(name) {
+  const res = await http.get("terms/" + name);
+  return res.data;
+}
