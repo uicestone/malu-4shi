@@ -5,7 +5,7 @@
         <img :src="`/images/header-town-${name}.png`" />
       </div>
       <div class="img">
-        <img :src="term.image || `/images/map-${name}.png`" />
+        <img :src="term.image" />
       </div>
       <div class="ssList bold clearfix">
         <a @click="goDetail(post)" v-for="post in posts" :key="post.id"
@@ -27,12 +27,12 @@ export default {
   methods: {
     goDetail(post) {
       this.$router.push("/post/" + post.id);
-    }
+    },
   },
   async mounted() {
     this.name = this.$route.params.name;
     this.posts = await getPosts({ category: this.name });
     this.term = await getTerm(this.name);
-  }
+  },
 };
 </script>
