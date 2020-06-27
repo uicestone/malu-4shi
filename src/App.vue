@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <keep-alive>
+    <router-view :key="$route.fullPath" />
+  </keep-alive>
 </template>
 
 <style>
